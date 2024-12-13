@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './RegisterPage.css'; // استيراد ملف CSS
+import './RegisterPage.css'; 
 import { useNavigate } from 'react-router-dom';
 
 const RegisterPage = () => {
