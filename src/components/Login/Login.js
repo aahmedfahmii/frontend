@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './Login.css';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -15,20 +17,21 @@ const Login = () => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({"email": email, "password":password }),
-                credentials: 'include',
-            });
-            if (!response.ok) {
+             });
+if(response.ok){
+    const data = await response.json();
+    localStorage.setItem("token",data?.token)
+    navigate('/home');
+
+}
+           else {
                 if (response.status === 401) {
                     setError('Invalid email or password');
                 } else {
                     setError('An error occurred. Please try again later.');
                 }
                 return;
-            }
-
-            const data = await response.json();
-            console.log('Login successful:', data);
-            alert('Login successful!');
+            } 
         } catch (err) {
             console.error('Login error:', err);
             setError('An error occurred. Please check your connection.');

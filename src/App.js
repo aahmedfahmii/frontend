@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LoginView from './components/Login/Login';
 import RegisterView from './components/Register/RegisterPage';
-import HomeView from './components/HomeView';
+import HomeView from './components/HomeView'
 
 const isAuthenticated = () => !!localStorage.getItem('token');
 
@@ -18,12 +18,12 @@ function App() {
           element={
             isAuthenticated() ? (
               <Routes>
-                <Route path="/" element={<HomeView />} />
+                <Route path="/home" element={<HomeView />} />
               </Routes>
             ) : (
               <Navigate to="/login" />
-            )  
-        }
+            )
+          }
         />
       </Routes>
     </Router>
@@ -31,3 +31,4 @@ function App() {
 }
 
 export default App;
+
