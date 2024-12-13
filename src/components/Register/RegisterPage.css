@@ -1,5 +1,4 @@
-/* RegisterView.css */
-body {
+.custom-body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -12,12 +11,12 @@ body {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.9); /* خلفية بيضاء شفافة قليلاً */
+  background: rgba(255, 255, 255, 0.9); /* Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡ Ø´ÙØ§ÙØ© Ù‚Ù„ÙŠÙ„Ø§Ù‹ */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 900px; /* زيادة العرض ليشمل المزيد من الحقول */
+  max-width: 900px; /* Ø²ÙŠØ§Ø¯Ø© Ø§Ù„Ø¹Ø±Ø¶ Ù„ÙŠØ´Ù…Ù„ Ø§Ù„Ù…Ø²ÙŠØ¯ Ù…Ù† Ø§Ù„Ø­Ù‚ÙˆÙ„ */
 }
 
 .card h1 {
@@ -48,11 +47,11 @@ body {
 .card .input-group {
   display: flex;
   justify-content: space-between;
-  gap: 20px; /* المسافة بين الحقول */
+  gap: 20px; /* Ø§Ù„Ù…Ø³Ø§ÙØ© Ø¨ÙŠÙ† Ø§Ù„Ø­Ù‚ÙˆÙ„ */
 }
 
 .card .input-group > div {
-  width: 48%; /* عرض كل حقل ليأخذ نصف المساحة */
+  width: 48%; /* Ø¹Ø±Ø¶ ÙƒÙ„ Ø­Ù‚Ù„ Ù„ÙŠØ£Ø®Ø° Ù†ØµÙ Ø§Ù„Ù…Ø³Ø§Ø­Ø© */
 }
 
 .card button {

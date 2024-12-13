@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './RegisterPage.css'; 
 import { useNavigate } from 'react-router-dom';
 
@@ -22,7 +22,13 @@ const RegisterPage = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
+ useEffect(() => {
+         document.body.classList.add("custom-body");
+    
+         return () => {
+          document.body.classList.remove("custom-body");
+        };
+      }, []);
   const handleRegister = async (e) => {
     e.preventDefault();
     setError('');
@@ -44,11 +50,8 @@ const RegisterPage = () => {
     try {
       const response = await fetch('http://localhost:5001/user/register', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
-        credentials: 'include'
       });
 
       if (!response.ok) {
@@ -66,6 +69,7 @@ const RegisterPage = () => {
   };
 
   return (
+    
     <div className="card">
       <h1>Register</h1>
       {message && <p style={{ color: 'green' }}>{message}</p>}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,7 +7,13 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-
+    useEffect(() => {
+         document.body.classList.add("custom-body");
+    
+         return () => {
+          document.body.classList.remove("custom-body");
+        };
+      }, []);
     const handleLogin = async (e) => {
         e.preventDefault();
         setError('');
@@ -21,8 +27,7 @@ const Login = () => {
 if(response.ok){
     const data = await response.json();
     localStorage.setItem("token",data?.token)
-    navigate('/home');
-
+    navigate('/home');  
 }
            else {
                 if (response.status === 401) {
@@ -39,6 +44,7 @@ if(response.ok){
     };
 
     return (
+        <div>
         <div className="login-card">
             <h1>Login</h1>
             {error && <div className="error-message">{error}</div>}
@@ -68,6 +74,7 @@ if(response.ok){
                     </h3>
                 </div>
             </form>
+        </div>
         </div>
     );
 };
