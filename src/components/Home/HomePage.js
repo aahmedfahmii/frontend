@@ -85,7 +85,7 @@ const HomePage = () => {
   useEffect(() => {
     fetch("http://localhost:5001/user/profile", {
       method: "GET",
-      credentials: "include", // Include cookies in the request
+      credentials: "include", 
     })
       .then((response) => {
         if (!response.ok) throw new Error("Error fetching user profile");
@@ -95,6 +95,7 @@ const HomePage = () => {
       .then((data) => setUserData(data))
       .catch((error) => console.error(error));
   }, []);
+
   const handleAddReview = async () => {
     if (!newReview.trim()) {
       setError('Review content cannot be empty');
@@ -227,7 +228,7 @@ const HomePage = () => {
         return <div>
           <h1>About Us</h1>
           <img src="https://www.rhsmith.umd.edu/sites/default/files//featured/2022/11/soccer-player.jpg" />
-          <p>
+          <div>
 
 Welcome to Thutmose Football Academy, your ultimate destination for booking premier football fields. Founded by enthusiasts deeply rooted in the love of the game, we are dedicated to offering top-notch facilities that cater to football players of all skill levels.
 
@@ -235,7 +236,7 @@ At Thutmose Football Academy, we streamline the field booking process, making it
 
 Our mission is to enhance the football community by promoting sportsmanship, health, and passion for the game. We collaborate with trusted field owners to ensure the highest quality standards, guaranteeing that each venue meets your needs and expectations.
 
-Thank you for choosing Thutmose Football Academy. We are excited to support your football adventures and are committed to delivering outstanding service and convenience. Book your next game with us and discover the best way to secure your ideal football pitch!</p>;
+Thank you for choosing Thutmose Football Academy. We are excited to support your football adventures and are committed to delivering outstanding service and convenience. Book your next game with us and discover the best way to secure your ideal football pitch!</div>;
           
            
             
@@ -253,7 +254,7 @@ Thank you for choosing Thutmose Football Academy. We are excited to support your
       onChange={(e) => {
         const selectedFieldId = e.target.value;
         setFormData({ ...formData, fieldId: selectedFieldId });
-        filterTimingsByField(selectedFieldId); // تصفية الأوقات عند تغيير الفيلد
+        filterTimingsByField(selectedFieldId); 
       }}
     >
       <option value="">Select Field</option>
