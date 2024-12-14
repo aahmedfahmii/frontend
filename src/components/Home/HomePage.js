@@ -131,7 +131,7 @@ const HomePage = () => {
       case "Home":
         return  <div className="home">
       <div className="grid-item top-left">
-        <h2>All Fields</h2>
+        <h1>All Fields</h1>
         <table>
           <thead>
             <tr>
@@ -163,7 +163,7 @@ const HomePage = () => {
 
    
       <div className="grid-item top-right">
-        <h2>All Bookings</h2>
+        <h1>All Bookings</h1>
         <table className="bookings-table">
           <thead>
             <tr>
@@ -194,17 +194,17 @@ const HomePage = () => {
         </table>
       </div>
       <div className="grid-item bottom-left " style={{textAlign:"center"}}>
-        <h2>Contact Us</h2>
-        <p>Email: contact@sportsbooking.com</p>
-        <p>Phone: +123-456-7890</p>
-        <p>Address: 123 Main Street, Cityville</p>
+        <h1>Contact Us</h1>
+        <p>Email: contact@thutmose.com</p>
+        <p>Phone: +20-011-192-874-00</p>
+        <p>Address: 123 Madinaty Road, New Cairo</p>
         <img src="https://images.stockcake.com/public/4/7/5/4755d8d4-26c3-41ec-bef7-86bfe4470a7b_large/sunset-soccer-game-stockcake.jpg"
         
         
         style={{width:"300", height: "500px", objectFit: "cover",textAlign:"center" }} />
       </div>
       <div className="grid-item bottom-right">
-        <h2>All Reviews</h2>
+        <h1>All Reviews</h1>
         <table>
                 <thead>
                   <tr>
