@@ -25,9 +25,7 @@ const Login = () => {
                 body: JSON.stringify({"email": email, "password":password }),
              });
 if(response.ok){
-    const data = await response.json();
-    console.log(data)
-     localStorage.setItem("token",data?.token)
+    const data = await response.json(); 
     document.cookie = `authToken=${data?.token}; path=/; max-age=3600; secure=false; samesite=strict`;
     navigate('/home');  
 }
@@ -82,3 +80,4 @@ if(response.ok){
 };
 
 export default Login;
+
