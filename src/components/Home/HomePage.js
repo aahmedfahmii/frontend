@@ -229,14 +229,12 @@ const HomePage = () => {
           <h1>About Us</h1>
           <img src="https://www.rhsmith.umd.edu/sites/default/files//featured/2022/11/soccer-player.jpg" />
           <div>
+  <p>Welcome to Thutmose Football Academy, your ultimate destination for booking premier football fields. Founded by enthusiasts deeply rooted in the love of the game, we are dedicated to offering top-notch facilities that cater to football players of all skill levels.</p>
+  <p>At Thutmose Football Academy, we streamline the field booking process, making it easy and convenient for you. Our platform features detailed information on each field, including availability, pricing, amenities, and precise locations. Whether you’re planning a friendly match, organizing a community tournament, or setting up corporate league games, we provide the perfect setting.</p>
+  <p>Our mission is to enhance the football community by promoting sportsmanship, health, and passion for the game. We collaborate with trusted field owners to ensure the highest quality standards, guaranteeing that each venue meets your needs and expectations.</p>
+  <p>Thank you for choosing Thutmose Football Academy. We are excited to support your football adventures and are committed to delivering outstanding service and convenience. Book your next game with us and discover the best way to secure your ideal football pitch!</p>
+</div>
 
-Welcome to Thutmose Football Academy, your ultimate destination for booking premier football fields. Founded by enthusiasts deeply rooted in the love of the game, we are dedicated to offering top-notch facilities that cater to football players of all skill levels.
-
-At Thutmose Football Academy, we streamline the field booking process, making it easy and convenient for you. Our platform features detailed information on each field, including availability, pricing, amenities, and precise locations. Whether you’re planning a friendly match, organizing a community tournament, or setting up corporate league games, we provide the perfect setting.
-
-Our mission is to enhance the football community by promoting sportsmanship, health, and passion for the game. We collaborate with trusted field owners to ensure the highest quality standards, guaranteeing that each venue meets your needs and expectations.
-
-Thank you for choosing Thutmose Football Academy. We are excited to support your football adventures and are committed to delivering outstanding service and convenience. Book your next game with us and discover the best way to secure your ideal football pitch!</div>;
           
            
             
