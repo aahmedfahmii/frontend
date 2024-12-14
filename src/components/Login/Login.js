@@ -26,7 +26,9 @@ const Login = () => {
              });
 if(response.ok){
     const data = await response.json();
-    localStorage.setItem("token",data?.token)
+    console.log(data)
+     localStorage.setItem("token",data?.token)
+    document.cookie = `authToken=${data?.token}; path=/; max-age=3600; secure=false; samesite=strict`;
     navigate('/home');  
 }
            else {

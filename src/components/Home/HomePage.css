@@ -1,0 +1,133 @@
+/* Main Container */
+.home-container {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 25%;
+    background-color: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .user-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .attribute-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .attribute-card h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .attribute-card p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Main Content */
+  .main-content {
+    width: 75%;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar h1 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .logout-button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .logout-button:hover {
+    background: #c82333;
+  }
+  
+  /* Tabs */
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tab {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .tab:hover {
+    background: #e9ecef;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  .tab {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .tab:hover {
+    background: #e9ecef;
+  }
+  
+  .tab.active {
+    background: #007bff;
+    color: #fff;
+    font-weight: bold;
+  }
+  

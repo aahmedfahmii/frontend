@@ -24,7 +24,6 @@ const RegisterPage = () => {
   };
  useEffect(() => {
          document.body.classList.add("custom-body");
-    
          return () => {
           document.body.classList.remove("custom-body");
         };

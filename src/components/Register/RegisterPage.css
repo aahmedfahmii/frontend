@@ -11,12 +11,12 @@
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.9); /* Ø®Ù„ÙÙŠØ© Ø¨ÙŠØ¶Ø§Ø¡ Ø´ÙØ§ÙØ© Ù‚Ù„ÙŠÙ„Ø§Ù‹ */
+  background: rgba(255, 255, 255, 0.9); 
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 900px; /* Ø²ÙŠØ§Ø¯Ø© Ø§Ù„Ø¹Ø±Ø¶ Ù„ÙŠØ´Ù…Ù„ Ø§Ù„Ù…Ø²ÙŠØ¯ Ù…Ù† Ø§Ù„Ø­Ù‚ÙˆÙ„ */
+  max-width: 900px; 
 }
 
 .card h1 {
@@ -47,13 +47,12 @@
 .card .input-group {
   display: flex;
   justify-content: space-between;
-  gap: 20px; /* Ø§Ù„Ù…Ø³Ø§ÙØ© Ø¨ÙŠÙ† Ø§Ù„Ø­Ù‚ÙˆÙ„ */
+  gap: 20px; 
 }
 
 .card .input-group > div {
-  width: 48%; /* Ø¹Ø±Ø¶ ÙƒÙ„ Ø­Ù‚Ù„ Ù„ÙŠØ£Ø®Ø° Ù†ØµÙ Ø§Ù„Ù…Ø³Ø§Ø­Ø© */
+  width: 48%; 
 }
-
 .card button {
   width: 100%;
   padding: 10px;
