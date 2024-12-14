@@ -155,26 +155,54 @@ const HomePage = () => {
 
       <div className="grid-item bottom-left">
         <h2>All Bookings</h2>
-        <ul>
-          {bookings.map((booking) => (
-            <li key={booking.ID}>
-              Field: {booking.FIELD_NAME}, Date: {booking.BOOKING_DATE}, Total Price: ${booking.TOTAL_PRICE}
-            </li>
-          ))}
-        </ul>
+        <table className="bookings-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Timing</th>
+              <th>Coach</th>
+              <th>Date</th>
+              <th>Total Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {bookings.length > 0 ? (
+              bookings.map((booking) => (
+                <tr key={booking.BookingID}>
+                  <td>{booking.FieldName}</td>
+                  <td>{booking.Timing}</td>
+                  <td>{booking.CoachName || "No Coach"}</td>
+                  <td>{booking.BookingDate}</td>
+                  <td>${booking.TOTAL_PRICE}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="5">No bookings found.</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
       </div>
 
       <div className="grid-item bottom-right">
         <h2>All Reviews</h2>
-        <ul>
-          {reviews.map((review) => (
-            <li key={review.ID}>
-              User: {review.USER_NAME}, Rating: {review.RATING}/5
-              <br />
-              {review.COMMENT}
-            </li>
-          ))}
-        </ul>
+        <table>
+                <thead>
+                  <tr>
+                    <th>#</th> 
+                    <th>Content</th> 
+                  </tr>
+                </thead>
+                <tbody>
+                  {reviews.map((review, index) => (
+                    <tr key={review.ID}>
+                      <td>{index + 1}</td> 
+                      <td>{review.CONTENT}</td> 
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
       </div>
     </div>;
       case "About":
@@ -224,7 +252,7 @@ const HomePage = () => {
               <option value="">No Coach</option>
               {coaches.map((coach) => (
                 <option key={coach.ID} value={coach.ID}>
-                  {coach.COACH_NAME} - {coach.SPECIALTY} (${coach.PRICE})
+                  {coach.CoachName} - {coach.SPECIALTY} (${coach.PRICE})
                 </option>
               ))}
             </select>
@@ -257,11 +285,11 @@ const HomePage = () => {
           <tbody>
             {bookings.length > 0 ? (
               bookings.map((booking) => (
-                <tr key={booking.ID}>
-                  <td>{booking.FIELD_NAME}</td>
-                  <td>{booking.TIMING}</td>
-                  <td>{booking.COACH_NAME || "No Coach"}</td>
-                  <td>{booking.BOOKING_DATE}</td>
+                <tr key={booking.BookingID}>
+                  <td>{booking.FieldName}</td>
+                  <td>{booking.Timing}</td>
+                  <td>{booking.CoachName || "No Coach"}</td>
+                  <td>{booking.BookingDate}</td>
                   <td>${booking.TOTAL_PRICE}</td>
                 </tr>
               ))
