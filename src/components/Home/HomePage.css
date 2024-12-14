@@ -34,19 +34,22 @@
   padding: 10px 15px;
   margin-bottom: 10px;
   width: 100%;
+  height: 15vh;
   text-align: center;
 }
 
 .attribute-card h4 {
   margin: 0;
-  font-size: 16px;
+  font-size: 30px;
   color: #333;
 }
 
 .attribute-card p {
   margin: 5px 0 0;
-  font-size: 14px;
+  font-size: 30px;
   font-weight: bold;
+  transform: scaleY(3);
+  padding-top: 15px;
 }
 
  .main-content {
@@ -265,4 +268,3 @@ margin-top: 0;
 font-size: 18px;
 color: #333;
 }
-  

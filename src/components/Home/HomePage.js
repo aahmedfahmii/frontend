@@ -19,7 +19,13 @@ const HomePage = () => {
     coachId: "",
     bookingDate: "",
   });
+  const [filteredTimings, setFilteredTimings] = useState([]);
 
+  const filterTimingsByField = (fieldId) => {
+    const filtered = timings.filter((timing) => timing.FIELD_ID === parseInt(fieldId));
+    setFilteredTimings(filtered);
+  };
+  
   useEffect(() => {
     // Fetch Fields
     fetch("http://localhost:5001/fields", { method: "GET", credentials: "include" })
@@ -40,7 +46,7 @@ const HomePage = () => {
       .catch((err) => console.error(err));
 
     // Fetch User's Previous Bookings
-    fetch("http://localhost:5001/bookings", { method: "GET", credentials: "include" })
+    fetch("http://localhost:5001/user/bookings", { method: "GET", credentials: "include" })
       .then((res) => res.json())
       .then((data) => setBookings(data))
       .catch((err) => console.error(err));
@@ -132,6 +138,8 @@ const HomePage = () => {
               <th>ID</th>
               <th>Name</th>
               <th>Location</th>
+              <th>PRICE</th>
+              <th>PICTURE</th>
             </tr>
           </thead>
           <tbody>
@@ -140,20 +148,21 @@ const HomePage = () => {
                 <td>{field.ID}</td>
                 <td>{field.NAME}</td>
                 <td>{field.LOCATION}</td>
+                <td>{field.PRICE}</td>
+                <td><img 
+            src={field.PICTURE} 
+            alt={`${field.NAME} Picture`} 
+            style={{ width: "100px", height: "100px", objectFit: "cover" }} 
+          /></td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      <div className="grid-item top-right">
-        <h2>Contact Us</h2>
-        <p>Email: contact@sportsbooking.com</p>
-        <p>Phone: +123-456-7890</p>
-        <p>Address: 123 Main Street, Cityville</p>
-      </div>
 
-      <div className="grid-item bottom-left">
+   
+      <div className="grid-item top-right">
         <h2>All Bookings</h2>
         <table className="bookings-table">
           <thead>
@@ -184,7 +193,16 @@ const HomePage = () => {
           </tbody>
         </table>
       </div>
-
+      <div className="grid-item bottom-left " style={{textAlign:"center"}}>
+        <h2>Contact Us</h2>
+        <p>Email: contact@sportsbooking.com</p>
+        <p>Phone: +123-456-7890</p>
+        <p>Address: 123 Main Street, Cityville</p>
+        <img src="https://images.stockcake.com/public/4/7/5/4755d8d4-26c3-41ec-bef7-86bfe4470a7b_large/sunset-soccer-game-stockcake.jpg"
+        
+        
+        style={{width:"300", height: "500px", objectFit: "cover",textAlign:"center" }} />
+      </div>
       <div className="grid-item bottom-right">
         <h2>All Reviews</h2>
         <table>
@@ -206,71 +224,91 @@ const HomePage = () => {
       </div>
     </div>;
       case "About":
-        return <p>About the Thutmose Football Academy.</p>;
+        return <div>
+          <h1>About Us</h1>
+          <img src="https://www.rhsmith.umd.edu/sites/default/files//featured/2022/11/soccer-player.jpg" />
+          <p>
+
+Welcome to Thutmose Football Academy, your ultimate destination for booking premier football fields. Founded by enthusiasts deeply rooted in the love of the game, we are dedicated to offering top-notch facilities that cater to football players of all skill levels.
+
+At Thutmose Football Academy, we streamline the field booking process, making it easy and convenient for you. Our platform features detailed information on each field, including availability, pricing, amenities, and precise locations. Whether you’re planning a friendly match, organizing a community tournament, or setting up corporate league games, we provide the perfect setting.
+
+Our mission is to enhance the football community by promoting sportsmanship, health, and passion for the game. We collaborate with trusted field owners to ensure the highest quality standards, guaranteeing that each venue meets your needs and expectations.
+
+Thank you for choosing Thutmose Football Academy. We are excited to support your football adventures and are committed to delivering outstanding service and convenience. Book your next game with us and discover the best way to secure your ideal football pitch!</p>;
+          
+           
+            
+            
+            </div>
       case "Booking":
         return  <div className="booking-page">
         <h2>Create New Booking</h2>
         <form className="booking-form" onSubmit={handleBookingSubmit}>
-          <div className="form-group">
-            <label>Field:</label>
-            <select
-              required
-              value={formData.fieldId}
-              onChange={(e) => setFormData({ ...formData, fieldId: e.target.value })}
-            >
-              <option value="">Select Field</option>
-              {fields.map((field) => (
-                <option key={field.ID} value={field.ID}>
-                  {field.NAME} - {field.LOCATION}
-                </option>
-              ))}
-            </select>
-          </div>
-  
-          <div className="form-group">
-            <label>Timing:</label>
-            <select
-              required
-              value={formData.timingId}
-              onChange={(e) => setFormData({ ...formData, timingId: e.target.value })}
-            >
-              <option value="">Select Timing</option>
-              {timings.map((timing) => (
-                <option key={timing.ID} value={timing.ID}>
-                  {timing.START_TIME} - {timing.END_TIME}
-                </option>
-              ))}
-            </select>
-          </div>
-  
-          <div className="form-group">
-            <label>Coach (Optional):</label>
-            <select
-              value={formData.coachId}
-              onChange={(e) => setFormData({ ...formData, coachId: e.target.value })}
-            >
-              <option value="">No Coach</option>
-              {coaches.map((coach) => (
-                <option key={coach.ID} value={coach.ID}>
-                  {coach.CoachName} - {coach.SPECIALTY} (${coach.PRICE})
-                </option>
-              ))}
-            </select>
-          </div>
-  
-          <div className="form-group">
-            <label>Date:</label>
-            <input
-              type="date"
-              required
-              value={formData.bookingDate}
-              onChange={(e) => setFormData({ ...formData, bookingDate: e.target.value })}
-            />
-          </div>
-  
-          <button type="submit" className="submit-button">Add Booking</button>
-        </form>
-  
+  <div className="form-group">
+    <label>Field:</label>
+    <select
+      required
+      value={formData.fieldId}
+      onChange={(e) => {
+        const selectedFieldId = e.target.value;
+        setFormData({ ...formData, fieldId: selectedFieldId });
+        filterTimingsByField(selectedFieldId); // تصفية الأوقات عند تغيير الفيلد
+      }}
+    >
+      <option value="">Select Field</option>
+      {fields.map((field) => (
+        <option key={field.ID} value={field.ID}>
+          {field.NAME} - {field.LOCATION}
+        </option>
+      ))}
+    </select>
+  </div>
+
+  <div className="form-group">
+    <label>Timing:</label>
+    <select
+      required
+      value={formData.timingId}
+      onChange={(e) => setFormData({ ...formData, timingId: e.target.value })}
+    >
+      <option value="">Select Timing</option>
+      {filteredTimings.map((timing) => (
+        <option key={timing.ID} value={timing.ID}>
+          {timing.TIME_SLOT}
+        </option>
+      ))}
+    </select>
+  </div>
+
+  <div className="form-group">
+    <label>Coach (Optional):</label>
+    <select
+      value={formData.coachId}
+      onChange={(e) => setFormData({ ...formData, coachId: e.target.value })}
+    >
+      <option value="">No Coach</option>
+      {coaches.map((coach) => (
+        <option key={coach.ID} value={coach.ID}>
+          {coach.CoachName} - {coach.SPECIALTY} (${coach.PRICE})
+        </option>
+      ))}
+    </select>
+  </div>
+
+  <div className="form-group">
+    <label>Date:</label>
+    <input
+      type="date"
+      required
+      value={formData.bookingDate}
+      onChange={(e) => setFormData({ ...formData, bookingDate: e.target.value })}
+    />
+  </div>
+
+  <button type="submit" className="submit-button">Add Booking</button>
+</form>
+
         <h3>Previous Bookings</h3>
         <table className="bookings-table">
           <thead>
@@ -367,7 +405,7 @@ const HomePage = () => {
         </div>
       </div>
 
-       <div className="main-content">
+       <div classNamresearche="main-content">
          <div className="navbar">
           <h1>Thutmose Football Academy</h1>
           <button
