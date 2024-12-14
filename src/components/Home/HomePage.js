@@ -29,7 +29,7 @@ const HomePage = () => {
       case "Booking":
         return <p>Book your next training session here.</p>;
       case "FYP":
-        return <p>Final Year Projects are displayed here.</p>;
+        return <p>Pictures and videos uploaded by users.</p>;
       case "Reviews":
         return <p>See what others are saying about us!</p>;
       default:
